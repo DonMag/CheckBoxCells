@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="v3U-3J-TUp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Filter Controller View Controller-->
+        <scene sceneID="Fi4-WL-aER">
+            <objects>
+                <viewController id="v3U-3J-TUp" customClass="FilterControllerViewController" customModule="CheckBoxCells" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="elW-45-0Ry"/>
+                        <viewControllerLayoutGuide type="bottom" id="J9h-76-dN2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9SZ-U1-kAs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeT-x6-FaY">
+                                <rect key="frame" x="126" y="44" width="123" height="30"/>
+                                <state key="normal" title="Cancel Selections"/>
+                                <connections>
+                                    <action selector="cancelDataItemSelected:" destination="v3U-3J-TUp" eventType="touchUpInside" id="B6l-m1-yW3"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N3Y-mU-wys">
+                                <rect key="frame" x="16" y="102" width="343" height="132"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="132" id="6Zq-Zn-quz"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="filterCell" id="8Qe-wp-gK9" customClass="ControllerCellTableViewCell" customModule="CheckBoxCells" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Qe-wp-gK9" id="wJ0-J4-We3">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeC-SP-Auj">
+                                                    <rect key="frame" x="8" y="6" width="32" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="CDF-bV-0qZ"/>
+                                                        <constraint firstAttribute="width" constant="32" id="S5n-g6-7cz"/>
+                                                    </constraints>
+                                                    <state key="normal" image="CheckButton__Deselect"/>
+                                                    <connections>
+                                                        <action selector="RadioButtonTapped:" destination="8Qe-wp-gK9" eventType="touchUpInside" id="HQv-Db-eLh"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jR1-p9-bJj">
+                                                    <rect key="frame" x="65" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jR1-p9-bJj" firstAttribute="leading" secondItem="YeC-SP-Auj" secondAttribute="trailing" constant="25" id="JoD-rV-4Ai"/>
+                                                <constraint firstItem="YeC-SP-Auj" firstAttribute="centerY" secondItem="wJ0-J4-We3" secondAttribute="centerY" id="MlT-ca-dvJ"/>
+                                                <constraint firstItem="jR1-p9-bJj" firstAttribute="centerY" secondItem="wJ0-J4-We3" secondAttribute="centerY" id="TPn-7g-rNW"/>
+                                                <constraint firstItem="YeC-SP-Auj" firstAttribute="leading" secondItem="wJ0-J4-We3" secondAttribute="leading" constant="8" id="wmT-rZ-wgL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="filterTableMenu" destination="jR1-p9-bJj" id="NwA-tn-b28"/>
+                                            <outlet property="tableRadioButton" destination="YeC-SP-Auj" id="hdb-Mu-GOJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="v3U-3J-TUp" id="oZJ-mP-l4E"/>
+                                    <outlet property="delegate" destination="v3U-3J-TUp" id="f9w-Rt-Wnh"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oeT-x6-FaY" firstAttribute="centerX" secondItem="9SZ-U1-kAs" secondAttribute="centerX" id="2Xg-PC-FMo"/>
+                            <constraint firstItem="N3Y-mU-wys" firstAttribute="leading" secondItem="9SZ-U1-kAs" secondAttribute="leadingMargin" id="3VJ-wH-nUu"/>
+                            <constraint firstItem="oeT-x6-FaY" firstAttribute="top" secondItem="elW-45-0Ry" secondAttribute="bottom" constant="24" id="BRu-FA-nah"/>
+                            <constraint firstItem="N3Y-mU-wys" firstAttribute="top" secondItem="oeT-x6-FaY" secondAttribute="bottom" constant="28" id="Ky9-dK-lJY"/>
+                            <constraint firstItem="N3Y-mU-wys" firstAttribute="trailing" secondItem="9SZ-U1-kAs" secondAttribute="trailingMargin" id="S2w-Ez-1Of"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="filterTable" destination="N3Y-mU-wys" id="npF-Vt-E3y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FV8-40-7pG" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CheckButton__Deselect" width="56" height="54"/>
+    </resources>
+</document>
